@@ -105,19 +105,20 @@ export default {
       }
     },
     listShow () {
-      if (!this.totalCount) {
-        this.fold = true
+      var _this = this
+      if (!_this.totalCount) {
+        _this.fold = true
         return false
       }
-      let show = !this.fold
+      let show = !_this.fold
       if (show) {
-        this.$nextTick(function () {
-          if (!this.scroll) {
-            this.scroll = new BScroll(this.$refs['list-content'], {
+        _this.$nextTick(function () {
+          if (!_this.scroll) {
+            _this.scroll = new BScroll(_this.$refs['list-content'], {
               click: true
             })
           } else {
-            this.scroll.refresh()
+            _this.scroll.refresh()
           }
         })
       }
